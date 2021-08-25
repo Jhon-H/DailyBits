@@ -63,12 +63,8 @@ body{
   background-color: white;
 }
 
-#email-login{
-
-}
-
 #email-login label{
-  margin: 0 0 .5rem 1rem;
+  margin: 0 0 1rem 1rem;
 }
 
 #email-login input{
@@ -96,4 +92,20 @@ body{
 
 #cuenta p a{
   text-decoration: none;
+}
+
+#header{
+  display: flex;
+  flex-direction: column;
+}
+
+#message{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: fit-content;
+
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
