@@ -4,13 +4,13 @@ class UI {
     const users = await (await fetch('http://localhost:4000/users')).json();
     const id = localStorage.getItem('id');
     const currUser = users.filter(user => user.id === parseInt(id))[0];
-    const div = document.getElementById('perfil');
+    const div = document.getElementById('main__profile');
 
     div.textContent = '';
     div.innerHTML = `
-    <img src="../img/HTML5_logo.png" alt="" id="profile-img"/>
-    <p> ${currUser.name} </p>
-    <p> ${currUser.email} </p>
+    <img src="../img/HTML5_logo.png" alt="" id="main__profile__img"/>
+    <p id="main__profile__name"> ${currUser.name} </p>
+    <p id="main__profile__email"> ${currUser.email} </p>
     `;
   }
 
@@ -20,11 +20,11 @@ class UI {
   }
 
   async editProfile () {
-    const id_ = localStorage.getItem('id');
-    const name_ = document.getElementById('name').value;
-    const email_ = document.getElementById('email').value;
+    const id = localStorage.getItem('id');
+    const name_ = document.getElementById('main__sesion__edit-modal__form__name').value;
+    const email_ = document.getElementById('main__sesion__edit-modal__form__email').value;
 
-    await fetch(`http://localhost:4000/users/${id_}`,
+    await fetch(`http://localhost:4000/users/${id}`,
       {
         method: 'PUT',
         body: JSON.stringify({
@@ -44,17 +44,19 @@ class UI {
 
 /*---------------------------------- Events ---------------------------------*/
 
-document.getElementById('sign-off').addEventListener('click', () => {
-  const userInterface = new UI();
-  userInterface.signOff();
-});
-
 window.addEventListener('DOMContentLoaded', e => {
+  document.getElementById('user').style.color = '#2CB67D';
+
   const userInterface = new UI();
   userInterface.currentUser();
 });
 
-document.getElementById('form').addEventListener('submit', e => {
+document.getElementById('main__sesion__edit-button__sign-off').addEventListener('click', () => {
+  const userInterface = new UI();
+  userInterface.signOff();
+});
+
+document.getElementById('main__sesion__edit-modal__form').addEventListener('submit', e => {
   e.preventDefault();
   const userInterface = new UI();
   userInterface.editProfile();

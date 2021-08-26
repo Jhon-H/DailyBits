@@ -36,27 +36,24 @@ ejemplo de cómo instalar lo que requiero si es muy específico
 
 ## 🌟 Autor
 
-* **<Tu nombre>**  - [@<username>](https://github.com/<username>)
+* Jhon Hernández  - [@Jhon-H](https://github.com/Jhon-H/)
 
 
-
+========================================
 
 TODO: hoy***
 
-2. Terminar css
-3. Fucionar css  + normalize.css
-4. Cambiar a arquitectura BEM
-5. Iniciar diseño de section.html
-
+1. Radial secciones.html
+2. Estadistica.html y organizacion de datos de usuario puntos, vidas, etc)
+4. FORMULARIO PARA MAÑANA FREECODECAMP
+5. normalize.css
+6. REPOSITORIO JHON-H 
 
 
 
 TODO:
-
--  Pagina 404
+-  Poner pagina de carga mientras carga boostrap y dema --> https://kimmobrunfeldt.github.io/progressbar.js/
 -  Validar que si no entra por url, verifique que esté inscrito
+-  Pagina 404
 -  Colores + bootsbox
--  Poner pagina de carga mientras carga boostrap y demas
--  Color a formulario de editar perfil
-
-****
+-  README profesional

@@ -5,38 +5,83 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../css/general.css">
   <link rel="stylesheet" href="../css/secciones.css">
   <title> Login | Daily Bits </title>
 </head>
 <body>
 
   <header id="header">
-    <p> Practica tus conocimientos en la categoría que prefieras.</p>
+    <h2 id="header__title"> Practica tus conocimientos en la categoría que prefieras.</h2>
   </header>
 
-  <main>
-    <p> HTML </p>
-    <p> HTML </p>
-    <p> HTML </p>
-    <p> HTML </p>
-    <p> HTML </p>
-  </main>
+  <main id="main">
+    <div id="container">
 
-  <footer>
-    <nav>
-      <a href="#" id="home">
-        <img src="../img/home_icon.svg">
+      <div class="main__categorie" id="html">
+        <div class="main__categorie__data  data-center">
+          <img src="../img/HTML5_logo.png" alt="HTML5" class="main__categorie__data__img"/>
+          <h2 class="main__categorie__data__name"> Html</h2>
+        </div>
+      </div> <!-- -->
+
+      <div class="main__categorie" id="css">
+        <div class="main__categorie__data  data-left">
+          <img src="../img/CSS3_logo.png" alt="CSS3" class="main__categorie__data__img"/>
+          <h2 class="main__categorie__data__name"> Css3 </h2>
+        </div>
+      </div> <!-- -->
+
+      <div class="main__categorie" id="js">
+        <div class="main__categorie__data  data-right">
+          <img src="../img/JS_logo.png" alt="Javascript" class="main__categorie__data__img"/>
+          <h2 class="main__categorie__data__name"> Js </h2>
+        </div>
+      </div> <!-- -->
+
+      <div class="main__categorie" id="figma">
+        <div class="main__categorie__data  data-left">
+          <img src="../img/FIGMA_logo.png" alt="FIGMA" class="main__categorie__data__img"/>
+          <h2 class="main__categorie__data__name"> Figma </h2>
+        </div>
+      </div> <!-- -->
+
+      <div class="main__categorie" id="ux">
+        <div class="main__categorie__data  data-right">
+          <img src="../img/HTML5_logo.png" alt="UX" class="main__categorie__data__img"/>
+          <h2 class="main__categorie__data__name"> Ux </h2>
+        </div>
+      </div> <!-- -->
+
+    </div> <!-- container -->
+  </main>
+  
+  <footer id="footer">
+    <nav id="footer__nav-bar">
+
+      <a href="#" class="footer__nav-bar__link" id="home">
+        <img src="../img/home_icon.svg" alt="" class="footer__nav-bar__img"/>
         <p> Home </p>
       </a>
-      <a href="#" id="activity">
-        <img src="../img/activity_icon.svg">
+
+      <a href="statistics.html" class="footer__nav-bar__link" id="activity">
+        <img src="../img/activity_icon.svg" alt="" class="footer__nav-bar__img"/>
         <p> Estadística </p>
       </a>
-      <a href="#" id="user">
-        <img src="../img/user_icon.svg">
+
+      <a href="user.html" class="footer__nav-bar__link" id="user">
+        <img src="../img/user_icon.svg" alt="" class="footer__nav-bar__img"/>
         <p> Perfil </p>
       </a>
+
     </nav>
   </footer>
+
+  <script src="../scripts/secciones.js"></script>
+  <script>
+    const h = parseFloat(screen.height/10);
+    document.getElementById('main').style.height = `${h - 13.9}rem`;
+  </script>
+
 </body>
 </html>

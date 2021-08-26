@@ -1,59 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
-
-html {
-  font-size: 62.5%;
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body{
-  margin: 0;
-  font-size: 16px; /*1rem : 10px*/  
-  background-color: #16161A;
-  font-family: 'Inter', sans-serif;
-  color: white;
-}
-
+/* ---- header ----*/
 #header{
   text-align: center;
-  padding: 0 2rem;
+  padding: 1.6rem 2rem;
 }
 
-
-footer nav {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  justify-content: space-around;
-  
-  width: 100%;
-  height: 6.9rem;
-  background-color: #232E35;
+#header__title{
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: normal;
 }
 
-footer nav a{
+/* --- main ---- */
+#main{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
 }
 
-footer nav img {
-  color: white; /*NO SIRVE*/
+#container{
+  display: grid;
+  grid: repeat(3, 1fr) / repeat(6, 1fr);
+  grid-template-areas:
+  "a a a a a a"
+  "b b b c c c"
+  "d d d e e e";
+
+  width: 100%;
+  column-gap: 3rem;
+  row-gap: 3rem;
+
 }
 
-footer nav p {
-  margin: .2rem 0 0;
+#html{ 
+  grid-area: a;
 }
 
-/* Home */
-#home {
-  color: #2CB67D;
+#css{ 
+  grid-area: b;
+}
+
+#js{ 
+  grid-area: c;
+}
+
+#figma{ 
+  grid-area: d;
+}
+
+#ux{ 
+  grid-area: e;
+}
+
+.main__categorie__data{
+  width: min-content;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.data-center{
+  margin: auto;
+}
+
+.data-left{
+  margin-left: auto;
+}
+
+.data-right{
+  margin-right: auto;
 }
