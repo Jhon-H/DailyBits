@@ -1,9 +1,8 @@
 {
   "users": [
     {
-      "name": "admin",
-      "email": "admin@admin.com",
-      "psw": "admin",
+      "name": "ADMIN23",
+      "email": "admin23@admin.com",
       "id": 0
     },
     {
@@ -17,6 +16,23 @@
       "email": "jejej@gmail.com",
       "psw": "aasdasd",
       "id": 2
+    },
+    {
+      "name": "Juan",
+      "email": "jh@geek.com",
+      "psw": "jhonkl",
+      "id": 3
+    },
+    {
+      "name": "fredy",
+      "email": "fredy@gmail.com",
+      "psw": "fredy23",
+      "id": 4
+    },
+    {
+      "name": "Testing2",
+      "email": "testing2@gmail.com",
+      "id": 5
     }
   ]
 }

@@ -1,0 +1,70 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  font-size: 16px; /*1rem : 10px*/  
+}
+
+#perfil{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+#perfil p{
+  margin: .3rem;
+}
+
+#perfil p:nth-child(2){
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#perfil p:last-child{
+  font-size: 1.3rem;
+}
+
+#profile-img{
+  width: 7rem;
+  height: 7rem;
+}
+
+
+#sesion{
+  margin-top: 3rem;
+}
+
+#edit-profile{
+  cursor: pointer;
+  width: max-content;
+  margin: auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #2CB67D;
+}
+
+#sign-off{
+  cursor: pointer;
+  width: max-content;
+  margin: auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #EF4565;
+}
+
+#editperfil{
+  color: black;
+}
+
+div#editperfil{
+  background-color: #232E35;
+}

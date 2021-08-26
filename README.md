@@ -43,18 +43,20 @@ ejemplo de cómo instalar lo que requiero si es muy específico
 
 TODO: hoy***
 
-- Funcionalodad de login
-- Perfil (con posibilidad de modificar)
-- fusionar css + normalize.css
-- Diseño de secciones.css (iconos que cambien de color)
-- Usar diseño BEM en css
-- Icono de aplicion
+2. Terminar css
+3. Fucionar css  + normalize.css
+4. Cambiar a arquitectura BEM
+5. Iniciar diseño de section.html
+
 
 
 
 TODO:
 
-- encontrar css similar (usado solo en preguntas)
--  Seccion para inscribirse
--  Modificar perfil
 -  Pagina 404
+-  Validar que si no entra por url, verifique que esté inscrito
+-  Colores + bootsbox
+-  Poner pagina de carga mientras carga boostrap y demas
+-  Color a formulario de editar perfil
+
+****

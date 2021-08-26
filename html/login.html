@@ -5,38 +5,38 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <title> Login | Daily Bits </title>
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/login.css">
+  <title> Login | Daily Bits </title>
 </head>
 <body>
 
   <header id="header">
-    <div id="message">
+    <div id="header__message">
       <!-- Javascript injection -->
     </div>
-    <img src="../img/Logo_background_purple.png" alt="logo purple" />
+    <img src="../img/Logo_background_purple.png" alt="logo purple" id="header__img"/>
   </header>
 
   <main id="main">
-    <h1> Iniciar sesión </h1>
+    <h1 id="main__title"> Iniciar sesión </h1>
 
-    <div id="container">
-      <div id="google-login">
-        <button class="btn btn-primary" type="button"> 
+    <div id="main__container">
+      <div id="main__container__google-login">
+        <button class="btn btn-primary" type="button" id="main__container__google-login__btn" >
           <img src="../img/icono-google.png" alt=""/> Continuar con Google
         </button>
-        <hr>
+        <hr id="main__container__google-login_line">
       </div>
 
-      <div id="email-login">
-        <label for="email"> Correo electrónico </label>
-        <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico" autocomplete="off"/>
+      <div id="main__container__email-login">
+        <label for="email" id="main__container__email-login__label"> Correo electrónico </label>
+        <input type="email" class="form-control" id="main__container__email-login__input" placeholder="Ingrese su correo electrónico" autocomplete="off"/>
       </div>
 
-      <div id="cuenta">
-        <!-- PROXIMAMENTE: Javascript Injection -->
-        <a href="#">¿Se te olvidó tu contraseña?</a>
-        <p>¿Aún no tienes una cuenta? <a href="signup.html"> Inscribirse</a></p>
+      <div id="main__account">
+        <a href="#" id="main__account__lose-psw">¿Se te olvidó tu contraseña?</a>
+        <p id="main__account__signup-text">¿Aún no tienes una cuenta? <a href="signup.html" id="main__account__signup-link"> Inscribirse</a></p>
       </div>
     </div>
   </main>
