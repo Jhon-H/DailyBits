@@ -1,0 +1,56 @@
+{
+  "seleccion": [
+    {
+      "img": "../img/person1.svg",
+      "text": "¿Qué etiqueta es semánticamente correcta para el contenido principal?",
+      "options": [ "main", "section", "header" ],
+      "correct": "main",
+      "rama":"html"
+    },
+    {
+      "img": "../img/person2.svg",
+      "text": "¿Qué etiqueta HTML nos sirve para incluir archivos de JavaScript?",
+      "options": [ "&#60;br&#62;", "&#60;script&#62;", "&#60;styles&#62;"],
+      "correct": "&#60;script&#62;",
+      "rama":"html"
+    },
+    {
+      "img": "../img/person3.svg",
+      "text":   "¿Cuál de las siguientes etiquetas NO es en línea inline?",
+      "options": [ "&#60;ul&#62;", "&#60;span&#62;", "&#60;ul&#62;" ],
+      "correct": "&#60;ul&#62;",
+      "rama":"html"
+    },
+    {
+      "img": "url",
+      "text": "¿¿Cómo añadimos un color de fondo a todos los elementos &#60;h1&#62;?",
+      "options": [ "h1.all { background-color:#FFFFFF}", "h1 { background-color:#FFFFFF}", "all.h1 { background-color:#FFFFFF}" ],
+      "correct": "h1 { background-color:#FFFFFF}",
+      "rama":"css"
+    },
+    {
+      "img": "url",
+      "text": "¿Cuál es la propiedad usada para cambiar el color de fondo?",
+      "options": [ "background-color:", "bgcolor:", "color:" ],
+      "correct": "background-color:",
+      "rama":"css"
+    },
+    {
+      "img": "url",
+      "text": " ¿Qué significa CSS?",
+      "options": [ "Creative Style Sheets", "Colorful Style Sheets", "Cascading Style Sheets" ],
+      "correct": "Cascading Style Sheets",
+      "rama":"css"
+    }
+  ],
+
+
+  "ordenar": [
+
+
+  ],
+
+  "imgOPtions":[
+
+  ]
+}

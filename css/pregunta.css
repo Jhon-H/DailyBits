@@ -1,0 +1,111 @@
+/* ---- lives ---- */
+#progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 5.6rem;
+}
+
+#progress__close{
+  cursor: pointer;
+  width: max-content;
+  font-size: 2rem;
+  color: #000000;
+}
+
+#progress__complete{
+  width: 70%;
+  height: 1.4rem;
+  background-color: white;
+  border-radius: 4rem;
+}
+
+#progress__lives{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 3.8rem;
+  font-weight: bold;
+}
+
+
+/* ---- type 1 ---- */
+
+/*header*/
+#statement{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.7rem;
+}
+
+#statement__img{
+  width: 7.5rem;
+  height: 15.9rem;
+}
+
+#statement__text{
+  width: 23.7rem;
+  height: fit-content;
+  line-height: 3rem;
+
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+/*options*/
+#options{
+  height: fit-content;
+  margin-top: 9.5rem;
+}
+
+.options__radiobutton{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 5.6rem;
+  margin: 0 auto 1.5rem;
+  padding: 0 1.5rem;
+
+  border: .2rem solid white;
+  border-radius: .4rem;
+  background-color: #232E35;
+}
+
+
+/*check*/
+
+#check{
+  /*TODO: poner al final*/
+  /* position: absolute;
+  bottom: 0; */
+  margin-top: 3rem;
+  width: 100%;
+  height: fit-content;
+}
+
+#check__button{
+  cursor: pointer;
+  width: 100%;
+  height: 5rem;
+
+  border: none;
+  border-radius: 1.5rem;
+  box-shadow: 0rem .1rem 0rem .1rem #AB90FF;
+  
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color:#D4CAF3;
+  color: #ffffff;
+}
+
+
+/* ---- type 2 ---- */
+
+
+/* ---- type 3 ---- */
+
+
+
