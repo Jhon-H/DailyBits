@@ -17,7 +17,14 @@ class UI {
           body: JSON.stringify({
             name: nombre_,
             email: email_,
-            psw: password_
+            psw: password_,
+            data: {
+              vidas: 4,
+              totalResuelto: {
+                html: 0,
+                css: 0
+              }
+            }
           }),
           headers:{
             'Content-Type': 'application/json; charset=UTF-8'

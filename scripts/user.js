@@ -23,14 +23,14 @@ class UI {
     const id = localStorage.getItem('id');
     const name_ = document.getElementById('main__sesion__edit-modal__form__name').value;
     const email_ = document.getElementById('main__sesion__edit-modal__form__email').value;
+    const data = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = id);
+    data.name = name_;
+    data.email = email_;
 
     await fetch(`http://localhost:4000/users/${id}`,
       {
         method: 'PUT',
-        body: JSON.stringify({
-          name: name_,
-          email: email_
-        }),
+        body: JSON.stringify(data),
         headers: {
           "Content-Type": "application/json; charset=UTF-8"
         }

@@ -2,37 +2,15 @@
   "users": [
     {
       "name": "admin",
-      "email": "ad@admin.com",
+      "email": "admin@admin.com",
+      "data": {
+        "vidas": 3,
+        "totalResuelto": {
+          "html": 2,
+          "css": 0
+        }
+      },
       "id": 0
-    },
-    {
-      "name": "Jhon Hernandez",
-      "email": "amonzos@protonmail.com",
-      "psw": "ekvYQBb3rUC8Y5a",
-      "id": 1
-    },
-    {
-      "name": "Jhon",
-      "email": "jejej@gmail.com",
-      "psw": "aasdasd",
-      "id": 2
-    },
-    {
-      "name": "Juan",
-      "email": "jh@geek.com",
-      "psw": "jhonkl",
-      "id": 3
-    },
-    {
-      "name": "fredy",
-      "email": "fredy@gmail.com",
-      "psw": "fredy23",
-      "id": 4
-    },
-    {
-      "name": "Testing2",
-      "email": "testing2@gmail.com",
-      "id": 5
     }
   ]
 }
