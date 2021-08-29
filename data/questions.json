@@ -18,14 +18,14 @@
     },
     {
       "img": "../img/person3.svg",
-      "text":   "¿Cuál de las siguientes etiquetas NO es en línea inline?",
+      "text":   "¿Cuál de las siguientes etiquetas NO es inline?",
       "options": [ "&lt;ul&gt;", "&lt;span&gt;", "&lt;sub&gt;"],
       "correct": "<ul>",
       "rama":"html",
       "id": 3
     },
     {
-      "img": "url",
+      "img": "../img/person1.svg",
       "text": "¿¿Cómo añadimos un color de fondo a todos los elementos &lt;h1&gt;?",
       "options": [ "h1.all { background-color:#FFFFFF}", "h1 { background-color:#FFFFFF}", "all.h1 { background-color:#FFFFFF}" ],
       "correct": "h1 { background-color:#FFFFFF}",
@@ -33,7 +33,7 @@
       "id": 4
     },
     {
-      "img": "url",
+      "img": "../img/person2.svg",
       "text": "¿Cuál es la propiedad usada para cambiar el color de fondo?",
       "options": [ "background-color:", "bgcolor:", "color:" ],
       "correct": "background-color:",
@@ -41,7 +41,7 @@
       "id": 5
     },
     {
-      "img": "url",
+      "img": "../img/person3.svg",
       "text": " ¿Qué significa CSS?",
       "options": [ "Creative Style Sheets", "Colorful Style Sheets", "Cascading Style Sheets" ],
       "correct": "Cascading Style Sheets",

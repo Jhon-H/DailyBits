@@ -1,35 +1,47 @@
 /*
-- que aumente la barra y disminuya vidas
-- que guarde los valores del usuario
-- radio buttons
-- funcionaliad
-- stadistica
-- css de singUp: corregir
-- añadir mas preguntas
-- configure que al presionar html entre a las preguntas y 
+- Corregir:
+  - genere 2 preguntas de cada tipo
+  - Aleatorizacion de preguntas seleccionadas
 
-- configure que ponga la rama en localStorage
-- testee que aparezca segu rama
-- configure que le guarde al usuario el progreso
-- termine la primera
-- añada las preguntas
-- juegue
 
-- hacer lo mismo con los otros dos tipos
-- añadir randomizacion de preguntas
+  - 2. add preguntas (12 por tipo y rama)
+
+  - Barra de progreso en cada seccion
+  - cuando complete las 6, salir
+
+
+
+- Despues de eso:  
+  - otros tipos de pregunta
+
+. Nota: hoy tiene que quedar funcional y completo para celular. Design de otras versiones
+
+- Despues:
+  - version para computador y tablet (css)
+  - empaquetar en webpack con babel
+  - mirar que todo funciones, buscar tricks
+  - readme profesional
+  - organizazion y comentarios
+
+
+-  SI alcanza:
+  - que no se pueda acceder si no se loguea
+  - 404
+
 */
 
-class UI {  
+class UI {
   constructor(){
     this.putUserData;
   }
 
-  async showQuestion (tipo) { 
-    /* Use la funcion adecuadar para mostrar, no solo msgTypeSelection */
+  async showQuestion (tipo) {
+    /*TOOO: Use la funcion adecuadar para mostrar, no solo msgTypeSelection */
     const idUser = localStorage.getItem('id');
+    const rama = localStorage.getItem('rama');
     const currQuestion = parseInt(localStorage.getItem('currQuestion') || 1);
     localStorage.setItem('currQuestion', currQuestion);
-    const data = (await (await fetch(`http://localhost:4001/${tipo}`)).json() ).filter(question => question.rama == 'html')[currQuestion-1];
+    const data = (await (await fetch(`http://localhost:4001/${tipo}`)).json() ).filter(question => question.rama == rama)[currQuestion-1];
     const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
     const infoDiv = this.msgTypeSelection(data, dataUser.data.vidas);
 
@@ -38,7 +50,7 @@ class UI {
     this.updateHeader(0);
   }
 
-  updateHeader(value=4.3){
+  updateHeader (value=4.3) {
     const progressGreen = document.getElementById('progress__complete__green');
     const globalProgress = parseFloat(localStorage.getItem('globalProgress') || 0);
     localStorage.setItem('globalProgress', globalProgress + value);
@@ -50,7 +62,6 @@ class UI {
     for(let btn of optionBtns) btn.parentElement.style.borderColor = '#ffffff';
     button.parentElement.style.borderColor = '#2CB67D';
 
-
     localStorage.setItem('selectOption', 'true');
     document.getElementById('check__button').style.backgroundColor = '#6B47DC';
     document.getElementById('check__button').style.boxShadow = '0rem .1rem 0rem .1rem #361a8a';
@@ -58,33 +69,51 @@ class UI {
 
   checkAnswerController (tipo) {
     const select = localStorage.getItem('selectOption');
-    if(select) this.checkAnswer(tipo, parseInt(localStorage.getItem('currQuestion')));
+    if(select)this.checkAnswer(tipo, parseInt(localStorage.getItem('currQuestion')));
   }
+
 
   async checkAnswer (tipo, idQuestion) {
     const selectioned = document.querySelector('.options__radiobutton__btn:checked').value;
-    const rama = localStorage.getItem('rama') || 'html'; //TODO: TEST
+    const rama = localStorage.getItem('rama');
     const idUser = localStorage.getItem('id');
 
-    console.log(tipo);
-    console.log(idQuestion);
-
     const dataQuestion = ( await (await fetch(`http://localhost:4001/${tipo}`)).json() ).find(question => question.id == idQuestion);
-    let dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
+    const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
 
     if(selectioned == dataQuestion.correct){
       dataUser.data.totalResuelto[rama]++;
+      dataUser.total.correct++;
       this.submitMessage('¡Buen trabajo!', 1);
     }else{
       dataUser.data.vidas--;
+      dataUser.total.incorrect++;
       this.submitMessage('La respueta correcta es:', 0, dataQuestion.correct);
     }
 
     this.putUserData = () => [idUser, dataUser];
+    if(!dataUser.data.vidas) {
 
-    //TODO:
-    // si las vidas llegan a 0, decir que perdió yse reinicia todo lo de esa categoria
-    // - actualizar valores (array user) ESTO ES DE CLASE, NO DE USER
+      dataUser.data = {
+        "vidas": 4,
+        "totalResuelto": {
+          "html": 0,
+          "css": 0
+        }
+      };
+  
+      await fetch(`http://localhost:4000/users/${idUser}`,
+        {
+          method: 'PUT',
+          body: JSON.stringify(dataUser),
+          headers: { "Content-Type": "application/json; charset=UTF-8" }
+        }
+      );
+
+      console.log("Vidas acabdas");
+      localStorage.setItem('finished', "yes");
+      window.open('secciones.html', '_self');
+    }
   }
 
   async putData(idUser, dataUser){
@@ -97,13 +126,15 @@ class UI {
     );
   }
 
-  nextQuestion () {
+  nextQuestion (tipo) {
     const putUserData = this.putUserData();
     const currQuestion = parseInt(localStorage.getItem('currQuestion')) + 1;
+    const index = parseInt(localStorage.getItem('indexQuestion'));
     localStorage.setItem('currQuestion', currQuestion);
+    localStorage.setItem('indexQuestion', index+1);
     this.updateHeader();
     this.putData(putUserData[0], putUserData[1]);
-    this.showQuestion();
+    // TODO: this.showQuestion(tipo);
   }
 
   submitMessage(message, state = 1, answer = "") {
@@ -188,33 +219,33 @@ class UI {
       `
     ];
   }
-
-  // async test(){
-  //   const idUser = localStorage.getItem('id');
-  //   let dataUser =  (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);;
-  //   console.log(dataUser.data.vidas);
-  //   console.log(dataUser.data.totalResuelto.html);
-  // }
 }
 
 const userInterface = new UI();
 
 window.addEventListener('DOMContentLoaded', e =>{
-  userInterface.showQuestion('seleccion');
-  localStorage.removeItem('selectOption');
-  // userInterface.test();
+  
+  const index = parseInt(localStorage.getItem('indexQuestion'));
+  const randomSelection = JSON.parse(localStorage.getItem('randomSelection'));
+
+  if(index == 2) {
+    alert("Felicidades !!! haz completado esta seccion");
+    setTimeout(() => { window.open('secciones.html', '_self') }, 2000);
+  }else{
+    userInterface.showQuestion(randomSelection[index]);
+    localStorage.removeItem('selectOption');
+  }
 });
 
 
 document.getElementById('main').addEventListener('click', e => {
-  if(e.target.classList.contains('options__radiobutton__btn')){
-    userInterface.optionPress(e.target);
+  if(e.target.classList.contains('options__radiobutton')){
+    userInterface.optionPress(e.target.firstElementChild);
   }
 
   if(e.target.id == 'check__button'){
     userInterface.checkAnswerController('seleccion');
   }
-
 });
 
 document.getElementById('footer').addEventListener('click', e => {
@@ -223,9 +254,16 @@ document.getElementById('footer').addEventListener('click', e => {
   }
 });
 
+
+
 /*
-  - CUAL PREGUNTA ESTA EN EL MOMENTO ? 
-  - vidas, resuelto
+SUPER TODO:
+- Que optionButton se active cuando se presione dentro de el, no solo si es el
+- cambiar diseño al presionar y al error
+
+
+
+
+
 
 */
-

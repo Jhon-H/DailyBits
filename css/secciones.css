@@ -57,6 +57,16 @@
   font-size: 1.2rem;
 }
 
+.main__categorie__data__img{
+  width: 7rem;
+  height: 7rem;
+}
+
+.link{
+  color: white;
+  text-decoration: none;
+}
+
 .data-center{
   margin: auto;
 }

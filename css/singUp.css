@@ -1,0 +1,29 @@
+#main{
+  padding: 3rem;
+  background-color: rgba(127, 255, 212, 0.1);
+  border-radius: 2rem;
+}
+
+#submit{
+  background-color: #1aa068;
+  border: .5rem #014126;
+  font-size: 1.4rem;
+}
+
+#header{
+  /* background-color: goldenrod; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+#header__img{
+  width: 8rem;
+  height: 8rem;
+}
+
+#header__link{
+  margin-top: 1rem;
+  color: #1aa068;
+}

@@ -6,9 +6,14 @@
       "data": {
         "vidas": 3,
         "totalResuelto": {
-          "html": 2,
+          "html": 8,
           "css": 0
         }
+      },
+      "total": {
+        "correct": 8,
+        "incorrect": 1,
+        "time": 0
       },
       "id": 0
     }

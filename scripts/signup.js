@@ -24,6 +24,11 @@ class UI {
                 html: 0,
                 css: 0
               }
+            },
+            total:{
+              correct: 0,
+              incorrect: 0,
+              time: 0
             }
           }),
           headers:{

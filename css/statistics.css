@@ -1,0 +1,40 @@
+#header{
+  margin-bottom: 3rem;
+}
+
+#header__title{
+  height: 4rem;
+  font-size: 2.2rem;
+}
+
+.card-statistc{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  height: 5.6rem;
+
+  border: .1rem solid #94A1B2;
+  border-radius: .5rem;
+}
+
+.container__card__name{
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  font-weight: bold;
+}
+
+img{
+  margin-right: .4rem;
+}
+
+
+/* funcionalidades */
+.red{
+  color: #EF4565;
+}
+
+.green{
+  color: #2CB67D;
+}

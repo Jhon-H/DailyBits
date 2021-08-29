@@ -6,16 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/general.css">
+  <link rel="stylesheet" href="../css/statistics.css">
   <title> Statistics | Daily Bits </title>
 </head>
 <body>
 
   <header id="header">
-    
+    <h2 id="header__title"> Estadísticas </h2>
+    <p id="header__nav"> Los últimos 7 días  </p>
   </header>
 
   <main id="main">
-    <h1> Estadísticas ...</h1>
+    <section id="main__study-time" class="card-statistc">
+      <div class="container__card__name">
+        <img src="../img/clock.svg" alt="clock" />
+        <p> Tiempo de estudio (horas) </p>
+      </div>
+      <p id="main__study-time__value"> <!-- Js injection--> </p>
+    </section>
+
+    <section id="main__ans-total" class="card-statistc">
+      <div class="container__card__name">
+        <img src="../img/message.svg" alt="message" />
+        <p> Respuestas contestadas </p>
+      </div>
+      <p id="main__ans-total__value"> <!--Js injection--> </p>
+    </section>
+
+    <section id="main__ans-correct" class="card-statistc">
+      <div class="container__card__name">
+        <img src="../img/message.svg" alt="message" />  
+        <p> Respuestas correctas </p>
+      </div>
+      <p class="green" id="main__ans-correct__value"><!--Js injection--> </p>
+    </section>
+
+    <section id="main__ans-incorrect" class="card-statistc">
+      <div class="container__card__name">
+        <img src="../img/message.svg" alt="message" />  
+        <p> Respuestas incorrectas </p>
+      </div>
+      <p class="red" id="main__ans-incorrect__value"> <!--Js injection--> </p>
+    </section>
   </main>
   
   <footer id="footer">
