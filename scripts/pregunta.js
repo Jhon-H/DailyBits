@@ -1,20 +1,10 @@
 /*
 - Corregir:
-  - genere 2 preguntas de cada tipo
-  - Aleatorizacion de preguntas seleccionadas
-
-
-  - 2. add preguntas (12 por tipo y rama)
-
   - Barra de progreso en cada seccion
-  - cuando complete las 6, salir
+  - temporizador
 
-
-
-- Despues de eso:  
+- Despues de eso:
   - otros tipos de pregunta
-
-. Nota: hoy tiene que quedar funcional y completo para celular. Design de otras versiones
 
 - Despues:
   - version para computador y tablet (css)
@@ -22,11 +12,6 @@
   - mirar que todo funciones, buscar tricks
   - readme profesional
   - organizazion y comentarios
-
-
--  SI alcanza:
-  - que no se pueda acceder si no se loguea
-  - 404
 
 */
 
@@ -41,6 +26,8 @@ class UI {
     const rama = localStorage.getItem('rama');
     const currQuestion = parseInt(localStorage.getItem('currQuestion') || 1);
     localStorage.setItem('currQuestion', currQuestion);
+
+
     const data = (await (await fetch(`http://localhost:4001/${tipo}`)).json() ).filter(question => question.rama == rama)[currQuestion-1];
     const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
     const infoDiv = this.msgTypeSelection(data, dataUser.data.vidas);
@@ -72,13 +59,12 @@ class UI {
     if(select)this.checkAnswer(tipo, parseInt(localStorage.getItem('currQuestion')));
   }
 
-
   async checkAnswer (tipo, idQuestion) {
     const selectioned = document.querySelector('.options__radiobutton__btn:checked').value;
     const rama = localStorage.getItem('rama');
     const idUser = localStorage.getItem('id');
 
-    const dataQuestion = ( await (await fetch(`http://localhost:4001/${tipo}`)).json() ).find(question => question.id == idQuestion);
+    const dataQuestion = ( await (await fetch(`http://localhost:4001/${tipo}`)).json() ).find(data => data.rama == rama && data.id == idQuestion);
     const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
 
     if(selectioned == dataQuestion.correct){
@@ -128,9 +114,15 @@ class UI {
 
   nextQuestion (tipo) {
     const putUserData = this.putUserData();
-    const currQuestion = parseInt(localStorage.getItem('currQuestion')) + 1;
+
+    // const currQuestion = parseInt(localStorage.getItem('currQuestion')) + 1;
+    //TODO: TODO:
+    const currQuestionRandom = Math.floor(Math.random() * (2)) + 1;
+    console.log(currQuestionRandom);
+    //TODO: TODO:
+
     const index = parseInt(localStorage.getItem('indexQuestion'));
-    localStorage.setItem('currQuestion', currQuestion);
+    localStorage.setItem('currQuestion', currQuestionRandom);
     localStorage.setItem('indexQuestion', index+1);
     this.updateHeader();
     this.putData(putUserData[0], putUserData[1]);
@@ -228,9 +220,9 @@ window.addEventListener('DOMContentLoaded', e =>{
   const index = parseInt(localStorage.getItem('indexQuestion'));
   const randomSelection = JSON.parse(localStorage.getItem('randomSelection'));
 
-  if(index == 2) {
+  if(index == 6) {   //TODO: cambiar a 6 cuando se add preuntas
     alert("Felicidades !!! haz completado esta seccion");
-    setTimeout(() => { window.open('secciones.html', '_self') }, 2000);
+    setTimeout(() => { window.open('secciones.html', '_self') }, 1500);
   }else{
     userInterface.showQuestion(randomSelection[index]);
     localStorage.removeItem('selectOption');
@@ -260,10 +252,4 @@ document.getElementById('footer').addEventListener('click', e => {
 SUPER TODO:
 - Que optionButton se active cuando se presione dentro de el, no solo si es el
 - cambiar diseño al presionar y al error
-
-
-
-
-
-
 */

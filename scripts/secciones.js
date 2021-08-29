@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', e => {
 
 document.getElementById('main').addEventListener('click', e => {  
   if(e.target.classList.contains('categorie-available')){
-    const ramas = ['seleccion', 'seleccion', 'seleccion']; //generar de manera aleatoria
+    const ramas = ['seleccion', 'seleccion', 'seleccion', 'seleccion', 'seleccion', 'seleccion']; //generar de manera aleatoria PERO 2 de cada tipo
     localStorage.setItem('indexQuestion', '0');
     localStorage.setItem('randomSelection', JSON.stringify(ramas));
     localStorage.setItem('rama', e.target.parentElement.parentElement.parentElement.id);

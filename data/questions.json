@@ -25,12 +25,108 @@
       "id": 3
     },
     {
+      "img": "../img/person4.svg",
+      "text":   "¿Qué significa el acrónimo HTML?",
+      "options": [ "Hyper Text Mask Language", "Hard Text Markup Language", "Hyper Text Markup Language"],
+      "correct": "Hyper Text Markup Language",
+      "rama":"html",
+      "id": 4
+    },
+    {
       "img": "../img/person1.svg",
-      "text": "¿¿Cómo añadimos un color de fondo a todos los elementos &lt;h1&gt;?",
+      "text": "¿Qué etiqueta es correcta para indicar un salto de línea?",
+      "options": ["&lt;breakline&gt;", "&lt;br&gt;", "&lt;hr&gt;"],
+      "correct": "<br>",
+      "rama":"html",
+      "id": 5
+    },
+    {
+      "img": "../img/person2.svg",
+      "text": "¿Cuál es la forma correcta de escribir un enlace en HTML?",
+      "options": [ "&lt;a src=...&gt;", "&lt;a href=...&gt;", "&lt;link href=...&gt;"],
+      "correct": "<a href=...>",
+      "rama":"html",
+      "id": 6
+    },
+    {
+      "img": "../img/person3.svg",
+      "text":   "¿Qué etiqueta se usa para escribir una lista no ordenada?",
+      "options": [ "&lt;ol&gt;", "&lt;ul&gt;", "&lt;ligt;"],
+      "correct": "<ul>",
+      "rama":"html",
+      "id": 7
+    },
+    {
+      "img": "../img/person4.svg",
+      "text":   "¿Cual valor abre el enlace en la misma página <link href='' target= ?",
+      "options": [ "_self", "_blanck", "_parent"],
+      "correct": "_self",
+      "rama":"html",
+      "id": 8
+    },
+    {
+      "img": "../img/person1.svg",
+      "text": "¿Cuál de las siguientes etiquetas NO es de bloque?",
+      "options": ["&lt;span&gt;", "&lt;h1&gt;", "&lt;p&gt;"],
+      "correct": "<span>",
+      "rama":"html",
+      "id": 9
+    },
+    {
+      "img": "../img/person2.svg",
+      "text": "La declaración: <!doctype html> define",
+      "options": [ "Un documento HTML5", "Cualquier version de HTML", "El idioma de la página"],
+      "correct": "Un documento HTML5",
+      "rama":"html",
+      "id": 10
+    },
+    {
+      "img": "../img/person3.svg",
+      "text":   "La etiqueta ul sería el parent' de:",
+      "options": [ "EL propio &lt;ulgt;", "Los &lt;ligt;", "Body"],
+      "correct": "Los <li>",
+      "rama":"html",
+      "id": 11
+    },
+    {
+      "img": "../img/person4.svg",
+      "text": "¿Qué etiqueta utilizamos para insertar una línea horizontal?",
+      "options": [ "&lt;hr&gt;", "&lt;line&gt;", "&lt;br&gt;"],
+      "correct": "<hr>",
+      "rama":"html",
+      "id": 12
+    },
+    {
+      "img": "../img/person1.svg",
+      "text": "¿Qué etiqueta es correcta para indicar un salto de línea?",
+      "options": ["&lt;breakline&gt;", "&lt;br&gt;", "&lt;hr&gt;"],
+      "correct": "<br>",
+      "rama":"html",
+      "id": 13
+    },
+    {
+      "img": "../img/person2.svg",
+      "text": "Elija la etiqueta apropiada para un texto en negrita",
+      "options": [ "&lt;bold&gt;", "&lt;bb&gt;", "&lt;b&gt;"],
+      "correct": "<b>",
+      "rama":"html",
+      "id": 14
+    },
+    {
+      "img": "../img/person3.svg",
+      "text": " Elija la etiqueta que por defecto nos dá el título más grande",
+      "options": [ "&lt;h1&gt;", "&lt;h6&gt;", "&lt;head&gt;"],
+      "correct": "<h1>",
+      "rama":"html",
+      "id": 15
+    },
+    {
+      "img": "../img/person1.svg",
+      "text": "¿Cómo añadimos un color de fondo a todos los elementos &lt;h1&gt;?",
       "options": [ "h1.all { background-color:#FFFFFF}", "h1 { background-color:#FFFFFF}", "all.h1 { background-color:#FFFFFF}" ],
       "correct": "h1 { background-color:#FFFFFF}",
       "rama":"css",
-      "id": 4
+      "id": 1
     },
     {
       "img": "../img/person2.svg",
@@ -38,7 +134,7 @@
       "options": [ "background-color:", "bgcolor:", "color:" ],
       "correct": "background-color:",
       "rama":"css",
-      "id": 5
+      "id": 2
     },
     {
       "img": "../img/person3.svg",
@@ -46,7 +142,103 @@
       "options": [ "Creative Style Sheets", "Colorful Style Sheets", "Cascading Style Sheets" ],
       "correct": "Cascading Style Sheets",
       "rama":"css",
+      "id": 3
+    },
+    {
+      "img": "../img/person4.svg",
+      "text": "¿Cuál de las siguientes declaraciones es un atributos?",
+      "options": [ "h1", "box-shadow", "first-child"],
+      "correct": "box-shadow",
+      "rama":"css",
+      "id": 4
+    },
+    {
+      "img": "../img/person1.svg",
+      "text": "¿Cuál de las siguientes declaraciones NO es un selector?",
+      "options": [ "*", "input[name='box']", "flex-direction"],
+      "correct": "flex-direction:",
+      "rama":"css",
+      "id": 5
+    },
+    {
+      "img": "../img/person2.svg",
+      "text": " ¿Cuál de los siguientes selectores tiene mayor especificidad?",
+      "options": [ "*", "div p", "#mi_input"],
+      "correct": "#mi_input",
+      "rama":"css",
       "id": 6
+    },
+    {
+      "img": "../img/person3.svg",
+      "text": " ¿Cómo se define un color de fondo para todas las etiquetas 'p' en CSS?",
+      "options": [ "p.all { background-color: red;}", "p { background-color: red;}", ".p { background-color: red;}" ],
+      "correct": "p { background-color: red;}",
+      "rama":"css",
+      "id": 7
+    },
+    {
+      "img": "../img/person4.svg",
+      "text": "¿Con qué propiedad se define el espacio entre el borde de un elemento y los elementos que lo rodean?",
+      "options": [ "border:", "margin:", "padding:" ],
+      "correct": "margin:",
+      "rama":"css",
+      "id": 8
+    },
+    {
+      "img": "../img/person1.svg",
+      "text": " ¿Cómo se cambia el valor del margen derecho de un elemento?",
+      "options": [ "text-right", "margin_right", "margin-right"],
+      "correct": "margin-right",
+      "rama":"css",
+      "id": 9
+    },
+    {
+      "img": "../img/person2.svg",
+      "text": "¿Cómo se indica que el color del texto es de color rojo?",
+      "options": [ "color: red;", "color: rgb(255, 0, 0)", "Todas las anteriores"],
+      "correct": "Todas las anteriores",
+      "rama":"css",
+      "id": 10
+    },
+    {
+      "img": "../img/person3.svg",
+      "text": " ¿Qué propiedad se emplea para cambiar el tipo de letra de un elemento?",
+      "options": [ "text-family:", "text-type:", "font-family:" ],
+      "correct": "font-family:",
+      "rama":"css",
+      "id": 11
+    },
+    {
+      "img": "../img/person4.svg",
+      "text": "¿Qué atributo nos sirve para definir estilos en línea?",
+      "options": [ "script", "link", "style" ],
+      "correct": "style",
+      "rama":"css",
+      "id": 12
+    },
+    {
+      "img": "../img/person1.svg",
+      "text": "¿Cuál pseudoclase está presenta cuando se pasa el mouse por encima?",
+      "options": [ ":hover", ":after", ":invalid" ],
+      "correct": ":hover",
+      "rama":"css",
+      "id": 13
+    },
+    {
+      "img": "../img/person2.svg",
+      "text": "¿Cómo puedo añadir decoraciones a un párrafo?",
+      "options": [ "text-decoration:", "test-decorative:", "p-decoration:" ],
+      "correct": "text-decoration:",
+      "rama":"css",
+      "id": 14
+    },
+    {
+      "img": "../img/person3.svg",
+      "text": "¿Cuál de las siguientes añade 1px a margin-top?",
+      "options": [ "margin: 0 1px 0", "margin: 1px 0 0 0", "margin-bottom: 1px" ],
+      "correct": "margin: 1px 0 0 0",
+      "rama":"css",
+      "id": 15
     }
   ],
 
