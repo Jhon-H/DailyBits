@@ -32,22 +32,27 @@
 
 #html{ 
   grid-area: a;
+  position: relative;
 }
 
 #css{ 
   grid-area: b;
+  position: relative;
 }
 
 #js{ 
   grid-area: c;
+  position: relative;
 }
 
 #figma{ 
   grid-area: d;
+  position: relative;
 }
 
 #ux{ 
   grid-area: e;
+  position: relative;
 }
 
 .main__categorie__data{
@@ -55,11 +60,16 @@
   text-transform: uppercase;
   text-align: center;
   font-size: 1.2rem;
+  margin: auto; 
 }
 
 .main__categorie__data__img{
   width: 7rem;
   height: 7rem;
+}
+
+.main__categorie__data__name{
+  margin-top: 1rem;
 }
 
 .link{
@@ -77,4 +87,38 @@
 
 .data-right{
   margin-right: auto;
+}
+
+
+/* --- progress ----*/
+
+svg{
+  position: absolute;
+  width: 9rem;
+  height: 9rem;
+  left: 3rem;
+  top: -1rem;
+  z-index: -1;
+  margin: auto;
+  background-color: #16161A;
+}
+
+.track{
+  stroke-width: 7;
+  stroke: #2CB67D;
+  fill: none;
+}
+
+.progress {
+  stroke-width: 7;
+  stroke: #DDDDDD;
+  stroke-linecap: round;
+  fill: none;
+  /* transform: rotate(270deg);
+  transform-origin: center; */
+}
+
+#html-svg{
+  margin: auto;
+  left: 12rem;
 }

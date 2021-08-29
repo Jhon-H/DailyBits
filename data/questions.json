@@ -51,14 +51,14 @@
     {
       "img": "../img/person3.svg",
       "text":   "¿Qué etiqueta se usa para escribir una lista no ordenada?",
-      "options": [ "&lt;ol&gt;", "&lt;ul&gt;", "&lt;ligt;"],
+      "options": [ "&lt;ol&gt;", "&lt;ul&gt;", "&lt;li&gt;"],
       "correct": "<ul>",
       "rama":"html",
       "id": 7
     },
     {
       "img": "../img/person4.svg",
-      "text":   "¿Cual valor abre el enlace en la misma página <link href='' target= ?",
+      "text":   "¿Cual valor abre el enlace en la misma página &lt:link href='' target= ?&gt;",
       "options": [ "_self", "_blanck", "_parent"],
       "correct": "_self",
       "rama":"html",
@@ -74,7 +74,7 @@
     },
     {
       "img": "../img/person2.svg",
-      "text": "La declaración: <!doctype html> define",
+      "text": "La declaración: &lt;!doctype html&gt; define",
       "options": [ "Un documento HTML5", "Cualquier version de HTML", "El idioma de la página"],
       "correct": "Un documento HTML5",
       "rama":"html",
@@ -146,8 +146,8 @@
     },
     {
       "img": "../img/person4.svg",
-      "text": "¿Cuál de las siguientes declaraciones es un atributos?",
-      "options": [ "h1", "box-shadow", "first-child"],
+      "text": "¿Cuál de las siguientes declaraciones es un atributo?",
+      "options": [ "h1", "box-shadow", ":first-child"],
       "correct": "box-shadow",
       "rama":"css",
       "id": 4
@@ -155,7 +155,7 @@
     {
       "img": "../img/person1.svg",
       "text": "¿Cuál de las siguientes declaraciones NO es un selector?",
-      "options": [ "*", "input[name='box']", "flex-direction"],
+      "options": [ "*", "input[name='box']", "flex-direction:"],
       "correct": "flex-direction:",
       "rama":"css",
       "id": 5
@@ -178,7 +178,7 @@
     },
     {
       "img": "../img/person4.svg",
-      "text": "¿Con qué propiedad se define el espacio entre el borde de un elemento y los elementos que lo rodean?",
+      "text": "¿Espacio entre el borde de un elemento y los elementos que lo rodean?",
       "options": [ "border:", "margin:", "padding:" ],
       "correct": "margin:",
       "rama":"css",

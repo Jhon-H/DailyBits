@@ -1,10 +1,9 @@
 /*
 - Corregir:
-  - Barra de progreso en cada seccion
-  - temporizador
-
-- Despues de eso:
   - otros tipos de pregunta
+  - Que optionButton se active cuando se presione dentro de el, no solo si es el
+  - cambiar diseño al presionar y al error
+  - temporizador (Hora de fin - Hora de inicio)
 
 - Despues:
   - version para computador y tablet (css)
@@ -12,6 +11,7 @@
   - mirar que todo funciones, buscar tricks
   - readme profesional
   - organizazion y comentarios
+  - corregir lo que falte
 
 */
 
@@ -37,7 +37,7 @@ class UI {
     this.updateHeader(0);
   }
 
-  updateHeader (value=4.3) {
+  updateHeader (value=4.1) {
     const progressGreen = document.getElementById('progress__complete__green');
     const globalProgress = parseFloat(localStorage.getItem('globalProgress') || 0);
     localStorage.setItem('globalProgress', globalProgress + value);
@@ -63,7 +63,6 @@ class UI {
     const selectioned = document.querySelector('.options__radiobutton__btn:checked').value;
     const rama = localStorage.getItem('rama');
     const idUser = localStorage.getItem('id');
-
     const dataQuestion = ( await (await fetch(`http://localhost:4001/${tipo}`)).json() ).find(data => data.rama == rama && data.id == idQuestion);
     const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
 
@@ -71,6 +70,7 @@ class UI {
       dataUser.data.totalResuelto[rama]++;
       dataUser.total.correct++;
       this.submitMessage('¡Buen trabajo!', 1);
+
     }else{
       dataUser.data.vidas--;
       dataUser.total.incorrect++;
@@ -78,8 +78,13 @@ class UI {
     }
 
     this.putUserData = () => [idUser, dataUser];
+
     if(!dataUser.data.vidas) {
 
+      dataUser.globalTotal = {
+        "html": 0,
+        "css": 0
+      };
       dataUser.data = {
         "vidas": 4,
         "totalResuelto": {
@@ -87,7 +92,7 @@ class UI {
           "css": 0
         }
       };
-  
+
       await fetch(`http://localhost:4000/users/${idUser}`,
         {
           method: 'PUT',
@@ -96,7 +101,6 @@ class UI {
         }
       );
 
-      console.log("Vidas acabdas");
       localStorage.setItem('finished', "yes");
       window.open('secciones.html', '_self');
     }
@@ -112,21 +116,24 @@ class UI {
     );
   }
 
+  async updateGlobalTotal () {
+    const idUser = localStorage.getItem('id');
+    const rama = localStorage.getItem('rama');
+    const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
+    dataUser.globalTotal[rama]++;
+    this.putData(idUser, dataUser);
+  }
+
   nextQuestion (tipo) {
     const putUserData = this.putUserData();
-
-    // const currQuestion = parseInt(localStorage.getItem('currQuestion')) + 1;
-    //TODO: TODO:
-    const currQuestionRandom = Math.floor(Math.random() * (2)) + 1;
-    console.log(currQuestionRandom);
-    //TODO: TODO:
-
+    const currQuestionRandom = Math.floor(Math.random() * 14) + 1;
     const index = parseInt(localStorage.getItem('indexQuestion'));
+    
+    if(index == 5) this.updateGlobalTotal();  
     localStorage.setItem('currQuestion', currQuestionRandom);
     localStorage.setItem('indexQuestion', index+1);
     this.updateHeader();
     this.putData(putUserData[0], putUserData[1]);
-    // TODO: this.showQuestion(tipo);
   }
 
   submitMessage(message, state = 1, answer = "") {
@@ -220,9 +227,13 @@ window.addEventListener('DOMContentLoaded', e =>{
   const index = parseInt(localStorage.getItem('indexQuestion'));
   const randomSelection = JSON.parse(localStorage.getItem('randomSelection'));
 
-  if(index == 6) {   //TODO: cambiar a 6 cuando se add preuntas
-    alert("Felicidades !!! haz completado esta seccion");
-    setTimeout(() => { window.open('secciones.html', '_self') }, 1500);
+  if(index == 6) {
+    Swal.fire({
+      icon: 'success',
+      title: 'Siiiii',
+      text: 'Haz terminado esta sección !!',
+    });
+    setTimeout(() => { window.open('secciones.html', '_self') }, 3000);
   }else{
     userInterface.showQuestion(randomSelection[index]);
     localStorage.removeItem('selectOption');
@@ -245,11 +256,3 @@ document.getElementById('footer').addEventListener('click', e => {
     userInterface.nextQuestion();
   }
 });
-
-
-
-/*
-SUPER TODO:
-- Que optionButton se active cuando se presione dentro de el, no solo si es el
-- cambiar diseño al presionar y al error
-*/

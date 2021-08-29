@@ -3,16 +3,20 @@
     {
       "name": "Sandra",
       "email": "s@s.com",
+      "globalTotal": {
+        "html": 0,
+        "css": 0
+      },
       "data": {
-        "vidas": 2,
+        "vidas": 4,
         "totalResuelto": {
-          "html": 9,
-          "css": 1
+          "html": 0,
+          "css": 0
         }
       },
       "total": {
-        "correct": 22,
-        "incorrect": 6,
+        "correct": 26,
+        "incorrect": 12,
         "time": 0
       },
       "id": 0

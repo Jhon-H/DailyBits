@@ -18,6 +18,7 @@ class UI {
             name: nombre_,
             email: email_,
             psw: password_,
+            globalTotal = 0,
             data: {
               vidas: 4,
               totalResuelto: {
