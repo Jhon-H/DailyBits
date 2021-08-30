@@ -17,7 +17,7 @@ async function complete (){
   const idUser = localStorage.getItem('id');
   const rama = localStorage.getItem('rama');
   const progressUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser).globalTotal[rama];
-  return progressUser == 4;
+  return (progressUser == 4);
 }
 
 async function resetRama () {
@@ -55,6 +55,14 @@ async function playAgain () {
   });
 }
 
+function randomSortComparator (a, b) {
+  if(a == b) return -1;
+  else{
+    const randomSelection = Math.floor(Math.random() * 3);
+    return (randomSelection <= 1 ? -1 : 1);
+  }
+}
+
 
 /* --------------------------- Eventos  ---------------------------*/
 window.addEventListener('DOMContentLoaded', e => {
@@ -80,20 +88,38 @@ window.addEventListener('DOMContentLoaded', e => {
 
 document.getElementById('main').addEventListener('click', e => {  
   if(e.target.classList.contains('categorie-available')){
-    const ramas = ['seleccion', 'seleccion', 'seleccion', 'seleccion', 'seleccion', 'seleccion']; 
     //TODO: generar de manera aleatoria PERO 2 de cada tipo
+    /*
+    - Cuando se implementen otras preguntas, poner:
+    const ramas = ['seleccion', 'seleccion', 'ordenar', 'ordenar', 'imgOPtions', 'imgOPtions']; 
+    ramas.sort(randomSortComparator);
+    OO AUN MEJOR
+
+    read: https://bost.ocks.org/mike/shuffle/
+    arr.sort(() => (Math.random() > .5) ? -1 : 1);
+    
+    */
+    // const tipos = ['seleccion', 'seleccion', 'seleccion', 'seleccion', 'seleccion', 'seleccion']; 
+    
+    
+    //TODO: TEST DE PREGUNTAS TIPO OPCION
+    const tipos = ['imgOPtions', 'imgOPtions', 'imgOPtions', 'imgOPtions', 'imgOPtions', 'imgOPtions'];
+
+
+
     localStorage.setItem('indexQuestion', '0');
-    localStorage.setItem('randomSelection', JSON.stringify(ramas));
+    localStorage.setItem('randomSelection', JSON.stringify(tipos));
     localStorage.setItem('rama', e.target.parentElement.parentElement.parentElement.id);
 
-    const completeRama = complete().then(e => console.log(e));
-    if(!completeRama) window.open('pregunta.html', '_self');
-    else playAgain();
+    const completeRama = complete().then(e => {
+      if(!e) window.open('pregunta.html', '_self');
+      else playAgain();
+    });
+
+    // const completeRama = complete().then(e => console.log(e));
+    // console.log(completeRama);
+    // if(!completeRama) window.open('pregunta.html', '_self');
+    // else playAgain();
+
   }
 });
-
-
-/*
-- Si ya esta completo, prrguntar si quiere volver a jugar (en cuyo caso, reiniciar valroes), quitar enlaces de .html
-*/
-

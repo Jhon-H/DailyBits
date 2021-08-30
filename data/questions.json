@@ -42,83 +42,11 @@
     },
     {
       "img": "../img/person2.svg",
-      "text": "¿Cuál es la forma correcta de escribir un enlace en HTML?",
-      "options": [ "&lt;a src=...&gt;", "&lt;a href=...&gt;", "&lt;link href=...&gt;"],
-      "correct": "<a href=...>",
-      "rama":"html",
-      "id": 6
-    },
-    {
-      "img": "../img/person3.svg",
-      "text":   "¿Qué etiqueta se usa para escribir una lista no ordenada?",
-      "options": [ "&lt;ol&gt;", "&lt;ul&gt;", "&lt;li&gt;"],
-      "correct": "<ul>",
-      "rama":"html",
-      "id": 7
-    },
-    {
-      "img": "../img/person4.svg",
-      "text":   "¿Cual valor abre el enlace en la misma página &lt:link href='' target= ?&gt;",
-      "options": [ "_self", "_blanck", "_parent"],
-      "correct": "_self",
-      "rama":"html",
-      "id": 8
-    },
-    {
-      "img": "../img/person1.svg",
-      "text": "¿Cuál de las siguientes etiquetas NO es de bloque?",
-      "options": ["&lt;span&gt;", "&lt;h1&gt;", "&lt;p&gt;"],
-      "correct": "<span>",
-      "rama":"html",
-      "id": 9
-    },
-    {
-      "img": "../img/person2.svg",
       "text": "La declaración: &lt;!doctype html&gt; define",
       "options": [ "Un documento HTML5", "Cualquier version de HTML", "El idioma de la página"],
       "correct": "Un documento HTML5",
       "rama":"html",
-      "id": 10
-    },
-    {
-      "img": "../img/person3.svg",
-      "text":   "La etiqueta ul sería el parent' de:",
-      "options": [ "EL propio &lt;ulgt;", "Los &lt;ligt;", "Body"],
-      "correct": "Los <li>",
-      "rama":"html",
-      "id": 11
-    },
-    {
-      "img": "../img/person4.svg",
-      "text": "¿Qué etiqueta utilizamos para insertar una línea horizontal?",
-      "options": [ "&lt;hr&gt;", "&lt;line&gt;", "&lt;br&gt;"],
-      "correct": "<hr>",
-      "rama":"html",
-      "id": 12
-    },
-    {
-      "img": "../img/person1.svg",
-      "text": "¿Qué etiqueta es correcta para indicar un salto de línea?",
-      "options": ["&lt;breakline&gt;", "&lt;br&gt;", "&lt;hr&gt;"],
-      "correct": "<br>",
-      "rama":"html",
-      "id": 13
-    },
-    {
-      "img": "../img/person2.svg",
-      "text": "Elija la etiqueta apropiada para un texto en negrita",
-      "options": [ "&lt;bold&gt;", "&lt;bb&gt;", "&lt;b&gt;"],
-      "correct": "<b>",
-      "rama":"html",
-      "id": 14
-    },
-    {
-      "img": "../img/person3.svg",
-      "text": " Elija la etiqueta que por defecto nos dá el título más grande",
-      "options": [ "&lt;h1&gt;", "&lt;h6&gt;", "&lt;head&gt;"],
-      "correct": "<h1>",
-      "rama":"html",
-      "id": 15
+      "id": 6
     },
     {
       "img": "../img/person1.svg",
@@ -161,6 +89,168 @@
       "id": 5
     },
     {
+      "img": "../img/person1.svg",
+      "text": " ¿Cómo se cambia el valor del margen derecho de un elemento?",
+      "options": [ "text-right", "margin_right", "margin-right"],
+      "correct": "margin-right",
+      "rama":"css",
+      "id": 6
+    }
+  ],
+
+  "imgOPtions":[
+    {
+      "text":   "¿Qué etiqueta se usa para escribir una lista no ordenada?",
+      "options": [ 
+        "<img src='../img/preg1A.png' alt='' data-value='ol'/>",
+        "<img src='../img/preg1B.png' alt='' data-value='ul'/>",
+        "<img src='../img/preg1C.png' alt='' data-value='list'/>",
+        "<img src='../img/preg1D.png' alt='' data-value='li'/>"
+      ],
+      "correct": "ol",
+      "rama":"html",
+      "id": 1
+    },
+    {
+      "text": "¿Cuál fragmento de código recrea la formula del agua sin la O (H<sub>2</sub>)",
+      "options": [
+        "<img src='../img/preg2A.png' alt='' data-value='1'/>",
+        "<img src='../img/preg2B.png' alt='' data-value='2'/>",
+        "<img src='../img/preg2C.png' alt='' data-value='3'/>",
+        "<img src='../img/preg2D.png' alt='' data-value='4'/>"
+      ],
+      "correct": "2",
+      "rama":"html",
+      "id": 2
+    },
+    {
+      "text": "¿Con qué atributo se abre un enlace en la misma página? ",
+      "options": [
+        "<img src='../img/preg3A.png' alt='' data-value='house'/>",
+        "<img src='../img/preg3B.png' alt='' data-value='blank'/>",
+        "<img src='../img/preg3C.png' alt='' data-value='parent'/>",
+        "<img src='../img/preg3D.png' alt='' data-value='self'/>"
+      ],
+      "correct": "self",
+      "rama":"html",
+      "id": 3
+    },
+    {
+      "text":   "¿Cuál de las siguientes bibliotecas esta diseñada para simplificar la interacción on los elementos HTML?",
+      "options": [
+        "<img src='../img/preg4A.png' alt='' data-value='bootbox'/>",
+        "<img src='../img/preg4B.png' alt='' data-value='boostrap'/>",
+        "<img src='../img/preg4C.jpg' alt='' data-value='jquery'/>",
+        "<img src='../img/preg4D.png' alt='' data-value='sweetalert'/>"
+      ],
+      "correct": "jquery",
+      "rama":"html",
+      "id": 4
+    },
+    {
+      "text": "¿Cuál de los siguientes NO es un lenguaje de programación?",
+      "options": [
+        "<img src='../img/preg5A.png' alt='' data-value='cpp'/>",
+        "<img src='../img/preg5B.png' alt='' data-value='node'/>",
+        "<img src='../img/preg5C.png' alt='' data-value='javascript'/>",
+        "<img src='../img/preg5D.png' alt='' data-value='python'/>"
+      ],
+      "correct": "node",
+      "rama":"html",
+      "id": 5
+    },
+    
+    {
+      "text": "¿Cuál es la versión más reciente de HTML?",
+      "options": [
+        "<img src='../img/preg6A.png' alt='' data-value='html2'/>",
+        "<img src='../img/preg6B.jpeg' alt='' data-value='html4'/>",
+        "<img src='../img/preg6C.jpeg' alt='' data-value='html3'/>",
+        "<img src='../img/preg6D.png' alt='' data-value='html5'/>"
+      ],
+      "correct": "html5",
+      "rama":"html",
+      "id": 6
+    }
+  ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  "ordenar": [
+    {
+      "img": "../img/person2.svg",
+      "text": "¿Cuál es la forma correcta de escribir un enlace en HTML?",
+      "options": [ "&lt;a src=...&gt;", "&lt;a href=...&gt;", "&lt;link href=...&gt;"],
+      "correct": "<a href=...>",
+      "rama":"html",
+      "id": 6
+    },
+    
+    {
+      "img": "../img/person3.svg",
+      "text":   "La etiqueta ul sería el parent' de:",
+      "options": [ "EL propio &lt;ulgt;", "Los &lt;ligt;", "Body"],
+      "correct": "Los <li>",
+      "rama":"html",
+      "id": 11
+    },
+    {
+      "img": "../img/person4.svg",
+      "text": "¿Qué etiqueta utilizamos para insertar una línea horizontal?",
+      "options": [ "&lt;hr&gt;", "&lt;line&gt;", "&lt;br&gt;"],
+      "correct": "<hr>",
+      "rama":"html",
+      "id": 12
+    },
+    {
+      "img": "../img/person1.svg",
+      "text": "¿Qué etiqueta es correcta para indicar un salto de línea?",
+      "options": ["&lt;breakline&gt;", "&lt;br&gt;", "&lt;hr&gt;"],
+      "correct": "<br>",
+      "rama":"html",
+      "id": 13
+    },
+    {
+      "img": "../img/person2.svg",
+      "text": "Elija la etiqueta apropiada para un texto en negrita",
+      "options": [ "&lt;bold&gt;", "&lt;bb&gt;", "&lt;b&gt;"],
+      "correct": "<b>",
+      "rama":"html",
+      "id": 14
+    },
+    {
+      "img": "../img/person3.svg",
+      "text": " Elija la etiqueta que por defecto nos dá el título más grande",
+      "options": [ "&lt;h1&gt;", "&lt;h6&gt;", "&lt;head&gt;"],
+      "correct": "<h1>",
+      "rama":"html",
+      "id": 15
+    },
+    {
       "img": "../img/person2.svg",
       "text": " ¿Cuál de los siguientes selectores tiene mayor especificidad?",
       "options": [ "*", "div p", "#mi_input"],
@@ -183,14 +273,6 @@
       "correct": "margin:",
       "rama":"css",
       "id": 8
-    },
-    {
-      "img": "../img/person1.svg",
-      "text": " ¿Cómo se cambia el valor del margen derecho de un elemento?",
-      "options": [ "text-right", "margin_right", "margin-right"],
-      "correct": "margin-right",
-      "rama":"css",
-      "id": 9
     },
     {
       "img": "../img/person2.svg",
@@ -240,15 +322,19 @@
       "rama":"css",
       "id": 15
     }
-  ],
-
-
-  "ordenar": [
-
-
-  ],
-
-  "imgOPtions":[
-
   ]
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

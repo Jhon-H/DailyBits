@@ -4,6 +4,8 @@
   - Que optionButton se active cuando se presione dentro de el, no solo si es el
   - cambiar diseño al presionar y al error
   - temporizador (Hora de fin - Hora de inicio)
+  - responsive design circuenference
+
 
 - Despues:
   - version para computador y tablet (css)
@@ -30,7 +32,11 @@ class UI {
 
     const data = (await (await fetch(`http://localhost:4001/${tipo}`)).json() ).filter(question => question.rama == rama)[currQuestion-1];
     const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
-    const infoDiv = this.msgTypeSelection(data, dataUser.data.vidas);
+    
+    let infoDiv;
+    if(tipo == 'selection')  infoDiv = this.msgTypeSelection(data, dataUser.data.vidas);
+    if(tipo == 'imgOPtions')  infoDiv = this.msgTypeOption(data, dataUser.data.vidas);
+    // if(tipo == 'selection')  infoDiv = this.msgTypeSelection(data, dataUser.data.vidas);
 
     document.getElementById('header').innerHTML = infoDiv[0];
     document.getElementById('main').innerHTML = infoDiv[1];
@@ -126,7 +132,7 @@ class UI {
 
   nextQuestion (tipo) {
     const putUserData = this.putUserData();
-    const currQuestionRandom = Math.floor(Math.random() * 14) + 1;
+    const currQuestionRandom = Math.floor(Math.random() * 5) + 1;
     const index = parseInt(localStorage.getItem('indexQuestion'));
     
     if(index == 5) this.updateGlobalTotal();  
@@ -216,6 +222,50 @@ class UI {
         <input type="button" value="Comprobar" id="check__button" />
       </section>
       `
+    ];
+  }
+
+  msgTypeOption(data, lives=-1) {
+    return [
+    `
+    <div id="progress">
+      <div id="progress__close"><a href="../html/secciones.html" id="progress__close__link"> x </a></div>
+      <div id="progress__complete">
+        <div id="progress__complete__green"></div> 
+      </div>
+      <div id="progress__lives">
+        <img src="../img/heart.svg" alt="heart" />
+        <p> ${lives} </p>
+      </div>
+    </div>
+    `,
+
+    `
+    <section id="statement">
+      <p id="statement__text"> ${data.text}</p>
+    </section>
+
+    <section id="options">
+      <div class="options__img">
+        ${data.options[0]}
+      </div>
+
+      <div class="options__img">
+        ${data.options[1]}
+      </div>
+
+      <div class="options__img">
+        ${data.options[2]}
+      </div>
+
+      <div class="options__img">
+        ${data.options[3]}
+      </div>
+
+    <section id="check">
+      <input type="button" value="Comprobar" id="check__button" />
+    </section>
+    `
     ];
   }
 }
