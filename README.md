@@ -16,6 +16,11 @@ Para poder ejecutar correctamente la aplicacion, ejecute los siguietes comandos 
 
 Para poder ver el archivo de manera local abra un servidor web (por ejemplo, live server de vscode) desde el archivo index.html
 
+Si no tiene instalado `json-server` ejecute el siguiente comando desde una terminal
+
+```shell
+npm install json-server
+```
 
 ## 📌 Notas sobre el desarrollo y la version del proyecto
 
