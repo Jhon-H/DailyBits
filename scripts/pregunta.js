@@ -1,11 +1,10 @@
 /*
 - Corregir:
-  - Pregunta tipo mover
-  - Que optionButton se active cuando se presione dentro de el, no solo si es el
   - cambiar diseño al presionar y al error
-  - temporizador (Hora de fin - Hora de inicio)
-  - responsive design circuenference
+  - Pregunta tipo mover
   - readme profesional
+  - responsive design
+  - temporizador (Hora de fin - Hora de inicio)
 
 */
 
@@ -22,19 +21,18 @@ class UI {
 
 
     const data = (await (await fetch(`http://localhost:4001/${tipo}`)).json() ).filter(question => question.rama == rama)[currQuestion-1];
-    const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
+    const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id == idUser);
     
     let infoDiv;
     if(tipo == 'seleccion')  infoDiv = this.msgTypeSelection(data, dataUser.data.vidas);
     if(tipo == 'imgOPtions')  infoDiv = this.msgTypeOption(data, dataUser.data.vidas);
-    // if(tipo == 'selection')  infoDiv = this.msgTypeSelection(data, dataUser.data.vidas);
 
     document.getElementById('header').innerHTML = infoDiv[0];
     document.getElementById('main').innerHTML = infoDiv[1];
     this.updateHeader(0);
   }
 
-  updateHeader (value=4.1) {
+  updateHeader (value=4) {
     const progressGreen = document.getElementById('progress__complete__green');
     const globalProgress = parseFloat(localStorage.getItem('globalProgress') || 0);
     localStorage.setItem('globalProgress', globalProgress + value);
@@ -46,6 +44,7 @@ class UI {
     for(let btn of optionBtns) btn.parentElement.style.borderColor = '#ffffff';
     button.parentElement.style.borderColor = '#2CB67D';
 
+    button.checked= true;
     localStorage.setItem('selectOption', 'true');
     document.getElementById('check__button').style.backgroundColor = '#6B47DC';
     document.getElementById('check__button').style.boxShadow = '0rem .1rem 0rem .1rem #361a8a';
@@ -54,8 +53,8 @@ class UI {
   checkAnswerController (tipo, randomRama) {
     const select = localStorage.getItem('selectOption');
     if(select){
-      if(randomRama == 'selection') 
-        this.checkAnswer(tipo, parseInt(localStorage.getItem('currQuestion')));
+      if(randomRama == 'seleccion') 
+        this.checkAnswer(randomRama, parseInt(localStorage.getItem('currQuestion')));
       else if(randomRama == 'imgOPtions')
         this.checkAnswerIMG(randomRama, parseInt(localStorage.getItem('currQuestion')));
       
@@ -67,7 +66,12 @@ class UI {
     const rama = localStorage.getItem('rama');
     const idUser = localStorage.getItem('id');
     const dataQuestion = ( await (await fetch(`http://localhost:4001/${tipo}`)).json() ).find(data => data.rama == rama && data.id == idQuestion);
-    const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
+    const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id == idUser);
+
+    // console.log("idUser: " + idUser);
+    // const dataUserP = (await (await fetch(`http://localhost:4000/users`)).json()).filter(user => user.id == parseInt(idUser));
+    // console.log([idUser, dataUserP]);
+    // console.warn("EEYYYYY LINEA 85");
 
     if(selectioned == dataQuestion.correct){
       dataUser.data.totalResuelto[rama]++;
@@ -79,7 +83,7 @@ class UI {
       dataUser.total.incorrect++;
       this.submitMessage('La respueta correcta es:', 0, dataQuestion.correct);
     }
-
+    
     this.putUserData = () => [idUser, dataUser];
 
     if(!dataUser.data.vidas) {
@@ -127,7 +131,7 @@ class UI {
     this.putData(idUser, dataUser);
   }
 
-  nextQuestion (tipo) {
+  nextQuestion () {
     const putUserData = this.putUserData();
     const currQuestionRandom = Math.floor(Math.random() * 5) + 1;
     const index = parseInt(localStorage.getItem('indexQuestion'));
@@ -200,17 +204,17 @@ class UI {
 
       <section id="options">
         <div class="options__radiobutton">
-          <input type="radio" name="questionOption" class="options__radiobutton__btn" value="${data.options[0]}"/>
+          <input type="radio" name="questionOption" class="options__radiobutton__btn" value="${data.options[0]}" disabled/>
           <label for="radioBtn" class="options__radiobutton__label" >${data.options[0]}</label>  
         </div>
 
         <div class="options__radiobutton">
-          <input type="radio" name="questionOption" class="options__radiobutton__btn" value="${data.options[1]}" />
+          <input type="radio" name="questionOption" class="options__radiobutton__btn" value="${data.options[1]}" disabled/>
           <label for="radioBtn" class="options__radiobutton__label" >${data.options[1]}</label>  
         </div>
 
         <div class="options__radiobutton">
-          <input type="radio" name="questionOption" class="options__radiobutton__btn" value="${data.options[2]}"/>
+          <input type="radio" name="questionOption" class="options__radiobutton__btn" value="${data.options[2]}" disabled/>
           <label for="radioBtn" class="options__radiobutton__label">${data.options[2]}</label>  
         </div>
       </section>
@@ -349,8 +353,13 @@ window.addEventListener('DOMContentLoaded', e =>{
 
 
 document.getElementById('main').addEventListener('click', e => {
-  if(e.target.classList.contains('options__radiobutton')){
-    userInterface.optionPress(e.target.firstElementChild);
+  if(e.target.classList.contains('options__radiobutton') || 
+    e.target.classList.contains('options__radiobutton__label') ){
+      if(e.target.classList.contains('options__radiobutton__label')){
+        userInterface.optionPress(e.target.parentElement.firstElementChild);
+      }else{
+        userInterface.optionPress(e.target.firstElementChild);
+      }
   }
 
   if(e.target.classList.contains('option-img')){

@@ -88,26 +88,13 @@ window.addEventListener('DOMContentLoaded', e => {
 });
 
 document.getElementById('main').addEventListener('click', e => {  
-  if(e.target.classList.contains('categorie-available')){
-    //read: https://bost.ocks.org/mike/shuffle/
   
+  if(e.target.classList.contains('categorie-available')){
+    //Read: https://bost.ocks.org/mike/shuffle/ 
     const tipos =['seleccion', 'seleccion', 'seleccion', 'imgOPtions', 'imgOPtions', 'imgOPtions']; 
     tipos.sort(() => (Math.random() > .5) ? -1 : 1);
     console.log(tipos);
-    /*
-    - Cuando se implementen otras preguntas, poner:
-    const ramas = ['seleccion', 'seleccion', 'ordenar', 'ordenar', 'imgOPtions', 'imgOPtions']; 
-    ramas.sort(randomSortComparator);
-    OO AUN MEJOR
-
-    
-    arr.sort(() => (Math.random() > .5) ? -1 : 1);
-    
-    */
-    // const tipos = ['seleccion', 'seleccion', 'seleccion', 'seleccion', 'seleccion', 'seleccion']; 
-    
-
-
+  
     localStorage.setItem('indexQuestion', '0');
     localStorage.setItem('randomSelection', JSON.stringify(tipos));
     localStorage.setItem('rama', e.target.parentElement.parentElement.parentElement.id);
@@ -116,11 +103,5 @@ document.getElementById('main').addEventListener('click', e => {
       if(!e) window.open('pregunta.html', '_self');
       else playAgain();
     });
-
-    // const completeRama = complete().then(e => console.log(e));
-    // console.log(completeRama);
-    // if(!completeRama) window.open('pregunta.html', '_self');
-    // else playAgain();
-
   }
 });

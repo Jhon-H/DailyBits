@@ -42,14 +42,6 @@ ejemplo de cómo instalar lo que requiero si es muy específico
 
 
 TODO:
-1. Preguntas tipo imagen
-
-
-2. decoracion y seleccion en opciones de juego
-3. diseño para tablet y computador
-4. Preguntas de arrastrar
-5. Temporizador (restar hora de inicio y de fin)  
-6. Jugar y ver posibes errores
-7. Corregir errores
-8. README profesional
-9.  Empaquetar y subir
+1. Preguntas de arrastrar
+2. diseño para tablet y computador
+3. Temporizador (restar hora de inicio y de fin)  
