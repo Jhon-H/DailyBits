@@ -1,11 +1,9 @@
 /*
-- Corregir:
-  - cambiar diseño al presionar y al error
+Implementar las siguientes caracteristicas:
+
   - Pregunta tipo mover
-  - readme profesional
   - responsive design
   - temporizador (Hora de fin - Hora de inicio)
-
 */
 
 class UI {

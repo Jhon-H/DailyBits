@@ -1,47 +1,27 @@
-# 💎 Daily Bits
+# 💎 Daily Bits 1
 
-Las lecciones de Daily Bits se adaptan a tu estilo de aprendizaje. Los ejercicios están diseñados a tu medida para ayudarte a aprender y repasar tus conocimientos de programación y diseño.
+App de trivia de tecnologías web como HTML, Javascript, css, entre otras. Tiene creacion de usuario (singUp), seccion de juego, estadistica de usuario, editar perfil.
 
-
-Puedes verlo aquí: <link_para_ver>
 
 ## Requerimientos
 
-<qué requiere tu programa>
+Para poder ejecutar correctamente la aplicacion, ejecute los siguietes comandos desde la carpeta donde tenga alojado el proyecto. Hagalo en dos terminales diferentes
 
 ```shell
-ejemplo de cómo instalar lo que requiero si es muy específico
+  1. json-server --watch data/users.json --port 4000
+  2. json-server --watch data/questions.json --port 4001
 ```
 
 ## 🔥 Instalación
 
-```shell
-<escribe aquí cómo lo ejecuto>
-<aquí si necesito ejecutar otra cosa>
-```
+Para poder ver el archivo de manera local abra un servidor web (por ejemplo, live server de vscode) desde el archivo index.html
 
-## 🔍 Vistas 
 
-### 💻 Desktop
+## 📌 Notas sobre el desarrollo y la version del proyecto
 
-<imagen aquí>
+1. Aun estoy trabajando en el diseño responsivo. Para poder tener una experiencia agradable, adapte la patanlla del navegador a unas dimensiones de `360 x 680`. Pronto tendremos la version para desktop y para tablet.
 
-### 📱 Mobile
-
-<imagen aquí>
-
-## 📌 Stack
-
-<escribe aquí>
 
 ## 🌟 Autor
 
 * Jhon Hernández  - [@Jhon-H](https://github.com/Jhon-H/)
-
-
-
-
-TODO:
-1. Preguntas de arrastrar
-2. diseño para tablet y computador
-3. Temporizador (restar hora de inicio y de fin)  
