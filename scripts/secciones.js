@@ -70,6 +70,7 @@ window.addEventListener('DOMContentLoaded', e => {
   document.getElementById('home').style.color = '#2CB67D';
   localStorage.removeItem('currQuestion');
   localStorage.removeItem('globalProgress');
+  localStorage.removeItem('IMG-select-value');
   localStorage.setItem('indexQuestion', '0');
 
   const finished = localStorage.getItem('finished') || -1;
@@ -88,23 +89,23 @@ window.addEventListener('DOMContentLoaded', e => {
 
 document.getElementById('main').addEventListener('click', e => {  
   if(e.target.classList.contains('categorie-available')){
-    //TODO: generar de manera aleatoria PERO 2 de cada tipo
+    //read: https://bost.ocks.org/mike/shuffle/
+  
+    const tipos =['seleccion', 'seleccion', 'seleccion', 'imgOPtions', 'imgOPtions', 'imgOPtions']; 
+    tipos.sort(() => (Math.random() > .5) ? -1 : 1);
+    console.log(tipos);
     /*
     - Cuando se implementen otras preguntas, poner:
     const ramas = ['seleccion', 'seleccion', 'ordenar', 'ordenar', 'imgOPtions', 'imgOPtions']; 
     ramas.sort(randomSortComparator);
     OO AUN MEJOR
 
-    read: https://bost.ocks.org/mike/shuffle/
+    
     arr.sort(() => (Math.random() > .5) ? -1 : 1);
     
     */
     // const tipos = ['seleccion', 'seleccion', 'seleccion', 'seleccion', 'seleccion', 'seleccion']; 
     
-    
-    //TODO: TEST DE PREGUNTAS TIPO OPCION
-    const tipos = ['imgOPtions', 'imgOPtions', 'imgOPtions', 'imgOPtions', 'imgOPtions', 'imgOPtions'];
-
 
 
     localStorage.setItem('indexQuestion', '0');

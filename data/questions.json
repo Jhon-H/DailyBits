@@ -102,22 +102,22 @@
     {
       "text":   "¿Qué etiqueta se usa para escribir una lista no ordenada?",
       "options": [ 
-        "<img src='../img/preg1A.png' alt='' data-value='ol'/>",
-        "<img src='../img/preg1B.png' alt='' data-value='ul'/>",
-        "<img src='../img/preg1C.png' alt='' data-value='list'/>",
-        "<img src='../img/preg1D.png' alt='' data-value='li'/>"
+        "<img src='../img/preg1A.png' alt='' class='option-img' data-value='ol'/>",
+        "<img src='../img/preg1B.png' alt='' class='option-img' data-value='ul'/>",
+        "<img src='../img/preg1C.png' alt='' class='option-img' data-value='list'/>",
+        "<img src='../img/preg1D.png' alt='' class='option-img' data-value='li'/>"
       ],
-      "correct": "ol",
+      "correct": "ul",
       "rama":"html",
       "id": 1
     },
     {
       "text": "¿Cuál fragmento de código recrea la formula del agua sin la O (H<sub>2</sub>)",
       "options": [
-        "<img src='../img/preg2A.png' alt='' data-value='1'/>",
-        "<img src='../img/preg2B.png' alt='' data-value='2'/>",
-        "<img src='../img/preg2C.png' alt='' data-value='3'/>",
-        "<img src='../img/preg2D.png' alt='' data-value='4'/>"
+        "<img src='../img/preg2A.png' alt='' class='option-img' data-value='1'/>",
+        "<img src='../img/preg2B.png' alt='' class='option-img' data-value='2'/>",
+        "<img src='../img/preg2C.png' alt='' class='option-img' data-value='3'/>",
+        "<img src='../img/preg2D.png' alt='' class='option-img' data-value='4'/>"
       ],
       "correct": "2",
       "rama":"html",
@@ -126,22 +126,22 @@
     {
       "text": "¿Con qué atributo se abre un enlace en la misma página? ",
       "options": [
-        "<img src='../img/preg3A.png' alt='' data-value='house'/>",
-        "<img src='../img/preg3B.png' alt='' data-value='blank'/>",
-        "<img src='../img/preg3C.png' alt='' data-value='parent'/>",
-        "<img src='../img/preg3D.png' alt='' data-value='self'/>"
+        "<img src='../img/preg3A.png' alt='' class='option-img' data-value='house'/>",
+        "<img src='../img/preg3B.png' alt='' class='option-img' data-value='blank'/>",
+        "<img src='../img/preg3C.png' alt='' class='option-img' data-value='parent'/>",
+        "<img src='../img/preg3D.png' alt='' class='option-img' data-value='self'/>"
       ],
       "correct": "self",
       "rama":"html",
       "id": 3
     },
     {
-      "text":   "¿Cuál de las siguientes bibliotecas esta diseñada para simplificar la interacción on los elementos HTML?",
+      "text":   "¿Cuál de las siguientes bibliotecas esta diseñada para simplificar la interacción con los elementos HTML?",
       "options": [
-        "<img src='../img/preg4A.png' alt='' data-value='bootbox'/>",
-        "<img src='../img/preg4B.png' alt='' data-value='boostrap'/>",
-        "<img src='../img/preg4C.jpg' alt='' data-value='jquery'/>",
-        "<img src='../img/preg4D.png' alt='' data-value='sweetalert'/>"
+        "<img src='../img/preg4A.png' alt='' class='option-img' data-value='bootbox'/>",
+        "<img src='../img/preg4B.png' alt='' class='option-img' data-value='boostrap'/>",
+        "<img src='../img/preg4C.jpg' alt='' class='option-img' data-value='jquery'/>",
+        "<img src='../img/preg4D.png' alt='' class='option-img' data-value='sweetalert'/>"
       ],
       "correct": "jquery",
       "rama":"html",
@@ -150,10 +150,10 @@
     {
       "text": "¿Cuál de los siguientes NO es un lenguaje de programación?",
       "options": [
-        "<img src='../img/preg5A.png' alt='' data-value='cpp'/>",
-        "<img src='../img/preg5B.png' alt='' data-value='node'/>",
-        "<img src='../img/preg5C.png' alt='' data-value='javascript'/>",
-        "<img src='../img/preg5D.png' alt='' data-value='python'/>"
+        "<img src='../img/preg5A.png' alt='' class='option-img' data-value='cpp'/>",
+        "<img src='../img/preg5B.png' alt='' class='option-img' data-value='node'/>",
+        "<img src='../img/preg5C.png' alt='' class='option-img' data-value='javascript'/>",
+        "<img src='../img/preg5D.png' alt='' class='option-img' data-value='python'/>"
       ],
       "correct": "node",
       "rama":"html",
@@ -163,10 +163,10 @@
     {
       "text": "¿Cuál es la versión más reciente de HTML?",
       "options": [
-        "<img src='../img/preg6A.png' alt='' data-value='html2'/>",
-        "<img src='../img/preg6B.jpeg' alt='' data-value='html4'/>",
-        "<img src='../img/preg6C.jpeg' alt='' data-value='html3'/>",
-        "<img src='../img/preg6D.png' alt='' data-value='html5'/>"
+        "<img src='../img/preg6A.png' alt='' class='option-img' data-value='html2'/>",
+        "<img src='../img/preg6B.jpeg' alt='' class='option-img' data-value='html4'/>",
+        "<img src='../img/preg6C.jpeg' alt='' class='option-img' data-value='html3'/>",
+        "<img src='../img/preg6D.png' alt='' class='option-img' data-value='html5'/>"
       ],
       "correct": "html5",
       "rama":"html",
@@ -198,7 +198,7 @@
 
 
 
-  
+
 
   "ordenar": [
     {

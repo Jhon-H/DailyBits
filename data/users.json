@@ -4,19 +4,19 @@
       "name": "Sandra",
       "email": "s@s.com",
       "globalTotal": {
-        "html": 0,
+        "html": 1,
         "css": 0
       },
       "data": {
-        "vidas": 4,
+        "vidas": 3,
         "totalResuelto": {
-          "html": 0,
+          "html": 5,
           "css": 0
         }
       },
       "total": {
-        "correct": 26,
-        "incorrect": 12,
+        "correct": 31,
+        "incorrect": 13,
         "time": 0
       },
       "id": 0

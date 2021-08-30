@@ -1,19 +1,11 @@
 /*
 - Corregir:
-  - otros tipos de pregunta
+  - Pregunta tipo mover
   - Que optionButton se active cuando se presione dentro de el, no solo si es el
   - cambiar diseño al presionar y al error
   - temporizador (Hora de fin - Hora de inicio)
   - responsive design circuenference
-
-
-- Despues:
-  - version para computador y tablet (css)
-  - empaquetar en webpack con babel
-  - mirar que todo funciones, buscar tricks
   - readme profesional
-  - organizazion y comentarios
-  - corregir lo que falte
 
 */
 
@@ -23,7 +15,6 @@ class UI {
   }
 
   async showQuestion (tipo) {
-    /*TOOO: Use la funcion adecuadar para mostrar, no solo msgTypeSelection */
     const idUser = localStorage.getItem('id');
     const rama = localStorage.getItem('rama');
     const currQuestion = parseInt(localStorage.getItem('currQuestion') || 1);
@@ -34,7 +25,7 @@ class UI {
     const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
     
     let infoDiv;
-    if(tipo == 'selection')  infoDiv = this.msgTypeSelection(data, dataUser.data.vidas);
+    if(tipo == 'seleccion')  infoDiv = this.msgTypeSelection(data, dataUser.data.vidas);
     if(tipo == 'imgOPtions')  infoDiv = this.msgTypeOption(data, dataUser.data.vidas);
     // if(tipo == 'selection')  infoDiv = this.msgTypeSelection(data, dataUser.data.vidas);
 
@@ -60,9 +51,15 @@ class UI {
     document.getElementById('check__button').style.boxShadow = '0rem .1rem 0rem .1rem #361a8a';
   }
 
-  checkAnswerController (tipo) {
+  checkAnswerController (tipo, randomRama) {
     const select = localStorage.getItem('selectOption');
-    if(select)this.checkAnswer(tipo, parseInt(localStorage.getItem('currQuestion')));
+    if(select){
+      if(randomRama == 'selection') 
+        this.checkAnswer(tipo, parseInt(localStorage.getItem('currQuestion')));
+      else if(randomRama == 'imgOPtions')
+        this.checkAnswerIMG(randomRama, parseInt(localStorage.getItem('currQuestion')));
+      
+    }
   }
 
   async checkAnswer (tipo, idQuestion) {
@@ -241,11 +238,11 @@ class UI {
     `,
 
     `
-    <section id="statement">
+    <section id="statement" class="img-header-text" >
       <p id="statement__text"> ${data.text}</p>
     </section>
 
-    <section id="options">
+    <section id="options" class="img-div">
       <div class="options__img">
         ${data.options[0]}
       </div>
@@ -267,6 +264,66 @@ class UI {
     </section>
     `
     ];
+  }
+
+  optionPressIMG( img ){ 
+    document.querySelectorAll('.options__img').forEach(div => {
+      div.style.borderColor = '#ffffff';
+    })
+    img.parentElement.style.borderColor = '#2CB67D';
+    localStorage.setItem('selectOption', 'true');
+    localStorage.setItem('IMG-select-value', img.dataset.value);
+      
+    document.getElementById('check__button').style.backgroundColor = '#6B47DC';
+    document.getElementById('check__button').style.boxShadow = '0rem .1rem 0rem .1rem #361a8a';
+  }
+
+  async checkAnswerIMG (tipo, idQuestion) {
+    // this.checkAnswerIMG(tipo, parseInt(localStorage.getItem('currQuestion')));    
+    const selectioned = localStorage.getItem('IMG-select-value');
+    const rama = localStorage.getItem('rama');
+    const idUser = localStorage.getItem('id');
+    const dataQuestion = ( await (await fetch(`http://localhost:4001/${tipo}`)).json() ).find(data => data.rama == rama && data.id == idQuestion);
+    const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
+
+    if(selectioned == dataQuestion.correct){
+      dataUser.data.totalResuelto[rama]++;
+      dataUser.total.correct++;
+      this.submitMessage('¡Buen trabajo!', 1);
+
+    }else{
+      dataUser.data.vidas--;
+      dataUser.total.incorrect++;
+      this.submitMessage('La respueta correcta es:', 0, dataQuestion.correct);
+    }
+
+    this.putUserData = () => [idUser, dataUser];
+
+    if(!dataUser.data.vidas) {
+
+      dataUser.globalTotal = {
+        "html": 0,
+        "css": 0
+      };
+      dataUser.data = {
+        "vidas": 4,
+        "totalResuelto": {
+          "html": 0,
+          "css": 0
+        }
+      };
+
+      await fetch(`http://localhost:4000/users/${idUser}`,
+        {
+          method: 'PUT',
+          body: JSON.stringify(dataUser),
+          headers: { "Content-Type": "application/json; charset=UTF-8" }
+        }
+      );
+
+      localStorage.setItem('finished', "yes");
+      window.open('secciones.html', '_self');
+    }
   }
 }
 
@@ -296,8 +353,15 @@ document.getElementById('main').addEventListener('click', e => {
     userInterface.optionPress(e.target.firstElementChild);
   }
 
+  if(e.target.classList.contains('option-img')){
+    userInterface.optionPressIMG(e.target);
+  }
+
   if(e.target.id == 'check__button'){
-    userInterface.checkAnswerController('seleccion');
+    const rama = localStorage.getItem('rama');
+    const index = parseInt(localStorage.getItem('indexQuestion'));
+    const randomSelection = JSON.parse(localStorage.getItem('randomSelection'));
+    userInterface.checkAnswerController(rama, randomSelection[index]);
   }
 });
 
