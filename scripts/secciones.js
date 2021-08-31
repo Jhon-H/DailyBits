@@ -1,7 +1,7 @@
 async function progressBar (barType, rama) {
   // Reference: https://github.com/ui-code/CircularProgressBar/blob/master/index.html
   const idUser = localStorage.getItem('id');
-  const progressUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser).globalTotal[rama];
+  const progressUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id == idUser).globalTotal[rama];
   setProgress(100 - progressUser*25, barType);
 }
 
@@ -16,13 +16,13 @@ function setProgress(percent, barType) {
 async function complete (){
   const idUser = localStorage.getItem('id');
   const rama = localStorage.getItem('rama');
-  const progressUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser).globalTotal[rama];
+  const progressUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id == idUser).globalTotal[rama];
   return (progressUser == 4);
 }
 
 async function resetRama () {
   const idUser = localStorage.getItem('id');
-  const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
+  const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id == idUser);
 
   dataUser.globalTotal = {
     "html": 0,

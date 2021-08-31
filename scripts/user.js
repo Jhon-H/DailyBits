@@ -3,7 +3,7 @@ class UI {
   async currentUser () {
     const users = await (await fetch('http://localhost:4000/users')).json();
     const id = localStorage.getItem('id');
-    const currUser = users.filter(user => user.id === parseInt(id))[0];
+    const currUser = users.find(user => user.id === parseInt(id));
     const div = document.getElementById('main__profile');
 
     div.textContent = '';
@@ -23,7 +23,7 @@ class UI {
     const id = localStorage.getItem('id');
     const name_ = document.getElementById('main__sesion__edit-modal__form__name').value;
     const email_ = document.getElementById('main__sesion__edit-modal__form__email').value;
-    const data = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = id);
+    const data = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id == id);
     data.name = name_;
     data.email = email_;
 

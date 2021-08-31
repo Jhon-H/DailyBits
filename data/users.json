@@ -22,22 +22,22 @@
       "id": 0
     },
     {
-      "name": "Sandra",
-      "email": "s@s.com",
+      "name": "Ari",
+      "email": "a@a.com",
       "globalTotal": {
         "html": 0,
         "css": 0
       },
       "data": {
-        "vidas": 2,
+        "vidas": 4,
         "totalResuelto": {
-          "html": 1,
+          "html": 0,
           "css": 0
         }
       },
       "total": {
-        "correct": 32,
-        "incorrect": 18,
+        "correct": 34,
+        "incorrect": 20,
         "time": 0
       },
       "id": 1

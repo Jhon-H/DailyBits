@@ -17,10 +17,9 @@ class UI {
     const currQuestion = parseInt(localStorage.getItem('currQuestion') || 1);
     localStorage.setItem('currQuestion', currQuestion);
 
-
     const data = (await (await fetch(`http://localhost:4001/${tipo}`)).json() ).filter(question => question.rama == rama)[currQuestion-1];
     const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id == idUser);
-    
+
     let infoDiv;
     if(tipo == 'seleccion')  infoDiv = this.msgTypeSelection(data, dataUser.data.vidas);
     if(tipo == 'imgOPtions')  infoDiv = this.msgTypeOption(data, dataUser.data.vidas);
@@ -124,7 +123,7 @@ class UI {
   async updateGlobalTotal () {
     const idUser = localStorage.getItem('id');
     const rama = localStorage.getItem('rama');
-    const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
+    const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id == idUser);
     dataUser.globalTotal[rama]++;
     this.putData(idUser, dataUser);
   }
@@ -286,7 +285,7 @@ class UI {
     const rama = localStorage.getItem('rama');
     const idUser = localStorage.getItem('id');
     const dataQuestion = ( await (await fetch(`http://localhost:4001/${tipo}`)).json() ).find(data => data.rama == rama && data.id == idQuestion);
-    const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id = idUser);
+    const dataUser = (await (await fetch(`http://localhost:4000/users`)).json()).find(user => user.id == idUser);
 
     if(selectioned == dataQuestion.correct){
       dataUser.data.totalResuelto[rama]++;
